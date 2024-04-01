@@ -1,0 +1,227 @@
+:root {
+    --light-bg-color: #9BB8CD;
+    --dark-bg-color: #2c2f32;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 1rem;
+    width: 95%;
+    margin-inline: auto;
+    max-width: 1200px;
+    background-color: var(--light-bg-color);
+}
+
+body.dark {
+    padding: 1rem;
+    width: 95%;
+    margin-inline: auto;
+    max-width: 1200px;
+    background-color: var(--dark-bg-color);
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.title {
+    color: white;
+    letter-spacing: 0.6rem;
+}
+
+.subtitle {
+    color: white;
+    margin-top: 2rem;
+    letter-spacing: 0.4rem;
+}
+
+.worldMap {
+    margin-top: 2em;
+    fill: white;
+}
+
+.usersNav {
+    display: flex;
+    list-style-type: none;
+    gap: 1rem
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-block: 1rem;
+}
+
+.header.noUser{
+    display: flex;
+    align-items: center;
+    margin-block: 1rem;
+    gap: 0
+}
+
+
+
+.userBox:not(.active) {
+    opacity: 0.4;
+}
+
+.userBox {
+    color: white;
+    border-radius: 9px;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    border: 1px solid white;
+    padding: 0.7rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: white;
+    /* transition: background-color 150ms linear, color 150ms linear; */
+}
+
+.addUser{
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid white;
+    padding: 0.5rem 0.8rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 150ms linear, color 150ms linear;
+    text-decoration: none;
+}
+
+.addUser:hover {
+    background-color: white;
+    color: #9BB8CD;
+}
+
+.enter_country.noUser {
+    display: none;
+}
+
+.toggle {
+    cursor:pointer
+}
+
+/* Form */
+
+form {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem
+}
+
+input[type='text'] {
+    border: 1px solid white;
+    width: 40%;
+    height: 2.5rem;
+    text-indent: 0.5rem;
+    border-radius: 5px;
+    caret-color: #494e53;
+    color: #494e53;
+    font-size: 1.2rem;
+}
+
+.submit{
+    border: 1px solid white;
+    padding: 0.7rem 1.5rem;
+    border-radius: 5px;
+    color: #9BB8CD;
+    cursor: pointer;
+    background-color: white;
+    transition: background-color 150ms linear, color 150ms linear;
+    font-weight: bold;
+}
+
+.submit.dark{
+    border: 1px solid white;
+    padding: 0.7rem 1.5rem;
+    border-radius: 5px;
+    color: #494e53;
+    cursor: pointer;
+    background-color: white;
+    transition: background-color 150ms linear, color 150ms linear;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: transparent;
+    color: white;
+}
+
+.submit.dark:hover {
+    background-color: transparent;
+    color: white;
+}
+
+input[type='text']:focus{
+    outline: none;
+}
+
+input[type='text']::placeholder{
+    color: #494e53;
+}
+
+.colour_palette {
+    display: flex;
+    align-items: center;
+    gap: 1rem
+}
+
+label {
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+}
+
+input[type='color']{
+    cursor: pointer;
+    border: none
+}
+
+
+.add_user_form {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem
+}
+
+.back{
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+}
+
+.back:hover {
+    text-decoration: underline;
+}
+
+
+.countriesTravelled{
+    color:white;
+    letter-spacing: 0.2rem;
+}
+
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    margin-block: 1.5rem;
+}

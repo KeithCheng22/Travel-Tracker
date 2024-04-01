@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Tracker</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <header class="nav">
+        <h1 class="title">Travel Tracker</h1>
+        <img src="./images/moon.svg" class="toggle"/>
+    </header>
+
+    <h2 class="subtitle">Create new member!</h2>
+    <hr style="margin-top: 10px;"/>
+
+    <a class='back' href="/">Return to world map</a>
+    
+    <form class='add_user_form' action="/add_user" method="POST">
+        <input placeholder="<%= (locals.error ? locals.error : 'Name') %>" type="text" aria-label="input new name" name="name" autofocus autocomplete="off" required class="add_user"/>
+
+        <div class="colour_palette">
+            <label for="colour">Select a colour: </label>
+            <input type="color" name="colour" required>
+        </div>
+        
+        <button class="submit" type="submit">Add</button>
+
+    </form>
+
+
+    <footer>
+        <em>Copyright &copy; <%= new Date().getFullYear() %></em>
+    </footer>
+
+    <script>
+        const body = document.querySelector('body')
+        const toggle_theme = document.querySelector('.toggle')
+        const add_user = document.querySelector('.add_user')
+        add_user.style.color = '#494e53'
+        const add_button = document.querySelector('.submit')
+
+        if(localStorage.getItem('website_theme')) {
+            body.classList.add('dark')
+            add_button.classList.toggle('dark')
+            toggle_theme.src = './images/sun.svg'
+        }
+       
+        console.log(toggle_theme)
+        toggle_theme.addEventListener('click', () => {
+            if(localStorage.getItem('website_theme')){
+                localStorage.removeItem('website_theme')
+                location.reload()
+            } else {
+                localStorage.setItem('website_theme', 'dark')
+                location.reload()
+            }
+        })
+     </script>
+</body>
+</html>
